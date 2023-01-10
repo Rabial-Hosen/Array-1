@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class Main {
+    
+    public static void LargestElement(int[] nums, int n) {
+        // Write code here
+		Arrays.sort(nums);
+        int largest_element=nums[nums.length-1];
+        int second_largest_element=nums[nums.length-2];
+        int index=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]==second_largest_element){
+                index=i;
+            }
+
+        }
+        if(second_largest_element*second_largest_element==largest_element){
+            return index;
+        }
+        return -1;
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n;
+        
+        n = sc.nextInt();
+        
+        int[] nums = new int[n];
+
+        for(int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        // System.out.println(LargestElement(nums, n));
+        LargestElement(nums, n);
+    }
+}
